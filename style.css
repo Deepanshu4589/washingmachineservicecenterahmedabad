@@ -5,6 +5,29 @@
   font-family: 'Inter', sans-serif;
 }
 
+/* TABLE WRAPPER FIX */
+.table-container {
+    width: 100%;
+    overflow-x: auto;   /* 🔥 IMPORTANT */
+}
+
+/* TABLE FIX */
+.table-container table {
+    width: 100%;
+    min-width: 600px;   /* 🔥 ensures scroll instead of cut */
+    border-collapse: collapse;
+}
+
+/* CELL TEXT FIX */
+.table-container td,
+.table-container th {
+    padding: 12px;
+    text-align: left;
+    white-space: nowrap;   /* 🔥 prevents breaking */
+}
+
+
+
 body {
   background: #f5f7fb;
   color: #111;
@@ -272,6 +295,8 @@ body {
   font-weight: 600;
   text-decoration: none;
 }
+
+
 
 /* AREAS SECTION */
 .areas {
@@ -755,5 +780,65 @@ html, body {
 
   body {
     overflow-x: hidden;
+  }
+}
+
+/* ================= AREA GRID FINAL MERGE ================= */
+
+/* DESKTOP (same 5 column) */
+.area-grid {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+/* ================= 1024px ================= */
+@media (max-width: 1024px) {
+
+  .area-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* fix border alignment */
+  .area-card:nth-child(5n) {
+    border-right: 1px solid #e5e7eb;
+  }
+
+  .area-card:nth-child(3n) {
+    border-right: none;
+  }
+}
+
+/* ================= 768px ================= */
+@media (max-width: 768px) {
+  .area-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ================= 425px ================= */
+@media (max-width: 425px) {
+  .area-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ================= 375px ================= */
+@media (max-width: 375px) {
+  .area-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .area-card:nth-child(3n) {
+    border-right: 1px solid #e5e7eb;
+  }
+
+  .area-card:nth-child(2n) {
+    border-right: none;
+  }
+}
+
+/* ================= 320px ================= */
+@media (max-width: 320px) {
+  .area-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
