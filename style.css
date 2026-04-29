@@ -842,3 +842,60 @@ html, body {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* ================= MOBILE FIX (VERTICAL STACK) ================= */
+
+/* 🔥 768px se neeche sab vertical */
+@media (max-width: 768px) {
+
+  /* FEATURES → 1 column */
+  .feature-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* SERVICES → 1 column */
+  .service-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* CARDS FULL WIDTH */
+  .feature,
+  .service-card {
+    width: 100%;
+  }
+
+}
+
+/* ================= UNIVERSAL MOBILE FIX ================= */
+
+@media (max-width: 768px) {
+
+  /* 🔥 fix body overflow */
+  html, body {
+    overflow-x: hidden;
+  }
+
+  /* 🔥 container perfect center */
+  .container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 16px !important;   /* both side equal */
+    margin: 0 auto;
+  }
+
+  /* 🔥 feature grid full control */
+  .feature-grid {
+    display: flex !important;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+  }
+
+  /* 🔥 cards proper spacing */
+  .feature {
+    width: 100%;
+    margin: 0;
+    padding: 25px 15px;
+  }
+
+}
